@@ -113,11 +113,14 @@ pull_webrtc() {
     if [ -z $1 ]
     then
         echo "gclient sync with newest"
-        gclient sync
+        gclient sync --nohooks --no-history
+        ./src/build/install-build-deps.sh --unsupported --no-syms --no-arm --no-chromeos-fonts --no-nacl
     else
         echo "gclient sync with $1"
-        gclient sync -r $1
+        gclient sync --nohooks -r $1
     fi
+
+    gclient runhooks
 
     # Navigate back
     cd "$WORKING_DIR"

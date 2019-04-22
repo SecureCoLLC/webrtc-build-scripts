@@ -324,7 +324,7 @@ get_webrtc_revision() {
 }
 
 get_webrtc() {
-    pull_depot_tools &&
+    # pull_depot_tools &&
     pull_webrtc $1
 }
 

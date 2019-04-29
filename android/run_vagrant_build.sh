@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
-sudo apt-get -y install\
-	git\
-	python
+sudo apt-get install -y \
+	git \
+	python \
+    default-jdk
 
 if [[ ! -d depot_tools ]]
 then
